@@ -29,6 +29,12 @@ var startButton = document.getElementById("start-btn");
 var questionsArea = document.getElementById("questions-area");
 var options = document.getElementById("options");
 
+startButton.addEventListener("click", function () {
+    startRow.style.display = "none";
+    var optionsToDisplay = stages[currentStage].options;
+    renderOptions(optionsToDisplay);
+  });
+
 var currentStage = 0;
 var stages = [
  
@@ -78,8 +84,22 @@ function renderOptions(array) {
     }
   });
   
-  startButton.addEventListener("click", function () {
-    startRow.style.display = "none";
-    var optionsToDisplay = stages[currentStage].options;
-    renderOptions(optionsToDisplay);
-  });
+  document.addEventListener('DOMContentLoaded', () => {
+      const timeLeftDisplay = document.querySelector('#time-left')
+      const startbtn =document.querySelector('#start-button')
+      let timeLeft = 30
+
+      function countdown(){
+          setInterval(function(){
+              if(timeLeft <= 0 ) {
+                  clearInterval(timeLeft = 0)
+              }
+              timeLeftDisplay.innerHTML = timeLeft
+              timeLeft -=1
+          }, 1000)
+      }
+
+      startbtn.addEventListener("click", countdown)
+
+  })
+ 

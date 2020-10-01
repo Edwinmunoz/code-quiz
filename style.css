@@ -1,12 +1,4 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-
-  .container {
+.container {
     width: 100vw;
     height: 100vh;
     display: flex;
