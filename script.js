@@ -80,14 +80,14 @@ function renderOptions(array) {
         var optionsToDisplay = stages[currentStage].options;
         options.textContent = "";
         renderOptions(optionsToDisplay);
-      }, 2000);
+      }, 1000);
     }
   });
   
   document.addEventListener('DOMContentLoaded', () => {
       const timeLeftDisplay = document.querySelector('#time-left')
-      const startbtn =document.querySelector('#start-button')
-      let timeLeft = 30
+      const startbtn =document.querySelector('#start-btn')
+      let timeLeft = 180
 
       function countdown(){
           setInterval(function(){
